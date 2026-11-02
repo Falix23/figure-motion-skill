@@ -35,6 +35,14 @@ class TimelineTests(unittest.TestCase):
         html=b.build(self.d)
         self.assertNotIn(self.d['title'],html)
         self.assertIn('\\u003c/script>',html)
+    def test_comma_ids_are_valid_references(self):
+        self.d['nodes'][0]['id']='input,raw'
+        self.d['edges'][0]['from']='input,raw'
+        self.d['edges'][0]['id']='edge,raw'
+        self.d['steps'][0]['nodes']=['input,raw']
+        self.d['steps'][1]['edges']=['edge,raw']
+        b.validate(self.d)
+        self.assertIn('input,raw',b.build(self.d))
     def test_duplicate_ids(self):
         self.d['nodes'][1]['id']=self.d['nodes'][0]['id']
         with self.assertRaises(ValueError): b.validate(self.d)

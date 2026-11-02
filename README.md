@@ -53,3 +53,16 @@ CI 在 Python 3.12 上执行领域不变量测试与示例构建。MIT 许可，
 
 
 ![合成示例预览](assets/preview.png)
+
+## 浏览器回归检查
+
+以下可选开发依赖仅用于测试，生成页面仍无第三方运行依赖。CI 也执行此检查。
+
+```bash
+python3 -m pip install -r requirements-dev.txt
+python3 -m playwright install chromium
+python3 tests/browser_regression.py
+```
+
+也可传 `--browser /path/to/chrome` 使用已安装的 Chrome／Chromium。回归用临时目录生成合成案例，不修改正式输出。
+检查逗号 id 的引用保存，以及播放跨步骤、暂停编辑、重置与新增步骤时的编辑器同步。
