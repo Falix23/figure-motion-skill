@@ -1,6 +1,6 @@
 # 图解动画工作台 · figure-motion
 
-[在线合成示例](https://lbj00jay.github.io/figure-motion-skill/) · [Skill 工作流](SKILL.md)
+[在线合成示例](https://Falix23.github.io/figure-motion-skill/) · [Skill 工作流](SKILL.md)
 
 将清晰的论文架构图、技术流程图或结构化说明转为可编辑节点、连线和分步讲解动画，输出离线 HTML、JSON、SVG 与讲解稿。
 
@@ -9,7 +9,7 @@
 需要 Python 3.10+ 与现代浏览器，无第三方运行依赖，无 API 密钥。
 
 ```bash
-git clone https://github.com/lbj00jay/figure-motion-skill.git
+git clone https://github.com/Falix23/figure-motion-skill.git
 cd figure-motion-skill
 python3 scripts/build.py examples/input.json --output outputs/demo.html
 python3 -m http.server 8000 --bind 127.0.0.1
