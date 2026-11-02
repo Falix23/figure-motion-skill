@@ -1,6 +1,8 @@
 # 图解动画工作台 · figure-motion
 
-[在线合成示例](https://Falix23.github.io/figure-motion-skill/) · [Skill 工作流](SKILL.md)
+[Skill 工作流](SKILL.md)
+
+本项目按私有开发项目管理。示例在本地体验：打开 `docs/index.html`，或按下方命令重新构建。
 
 将清晰的论文架构图、技术流程图或结构化说明转为可编辑节点、连线和分步讲解动画，输出离线 HTML、JSON、SVG 与讲解稿。
 
