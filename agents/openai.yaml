@@ -1,0 +1,4 @@
+interface:
+  display_name: "图解动画工作台"
+  short_description: "将技术流程图转为可编辑节点、连线与分步讲解动画，支持离线播放和矢量导出。"
+  default_prompt: "使用 $figure-motion 将这张技术流程图转为可编辑的分步讲解动画。"
