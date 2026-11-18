@@ -6,6 +6,18 @@
 
 将清晰的论文架构图、技术流程图或结构化说明转为可编辑节点、连线和分步讲解动画，输出离线 HTML、JSON、SVG 与讲解稿。
 
+## 论文视频讲解模块
+
+新增 [paper-story/](paper-story/)：阅读全文后编排背景、核心主张、模型结构与前向过程、实验证据和思考问题，生成配音字幕视频。包含独立Skill、在线晓晓配音、CPU渲染、完整Transformer示例、检查脚本和产物清单工具。
+
+```bash
+cd paper-story
+python3 -m pip install -r requirements.txt
+python3 scripts/build_transformer_example.py --preview-only --output outputs/preview
+```
+
+完整视频生成、安装与复现见 [paper-story说明](paper-story/README.md)。下文描述原有单图编辑工作台，其离线HTML能力仍可独立使用。
+
 ## 运行示例
 
 需要 Python 3.10+ 与现代浏览器，无第三方运行依赖，无 API 密钥。
@@ -42,7 +54,7 @@ Agent 根据素材生成 [项目 JSON](references/schema.md)，运行构建器�
 
 首版只还原显式节点和直线箭头，节点固定尺寸；复杂公式、曲线连线、嵌套分组、图片内嵌、视频编码和语音合成未实现。Agent 负责识图和内容核对，HTML 自身没有视觉模型。
 
-示例为原创合成内容。不要将私人素材和实际业务数据提交到公开仓库。所有用户文字通过 DOM 文本节点呈现，内嵌 JSON 对 `<` 转义；浏览器导入仍会校验领域引用与数值范围。
+原图解工作台示例为原创合成内容。新增论文示例使用原创重绘与教学算例，字体另按OFL许可提供。不要将私人素材和实际业务数据提交到公开仓库。所有用户文字通过 DOM 文本节点呈现，内嵌 JSON 对 `<` 转义；浏览器导入仍会校验领域引用与数值范围。
 
 ## 验证
 

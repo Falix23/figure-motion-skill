@@ -3,3 +3,14 @@ __pycache__/
 *.pyc
 .venv/
 .DS_Store
+
+# 论文视频运行产物、模型与本机配置
+*.mp4
+*.mp3
+*.wav
+*.safetensors
+*.onnx
+*.pt
+*.log
+.env
+.env.*

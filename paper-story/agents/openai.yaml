@@ -1,0 +1,4 @@
+interface:
+  display_name: "论文故事动画"
+  short_description: "阅读论文并制作兼顾背景、技术方法与证据的配音动画，交付完整工程和产物清单"
+  default_prompt: "使用 $paper-story 阅读这篇论文，制作有画面感的讲解视频，并详细列出所有保存的产物及其机器和路径。"

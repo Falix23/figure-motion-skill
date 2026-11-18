@@ -1,0 +1,21 @@
+name: Paper Story Offline Preview
+on:
+  push:
+    paths: ['paper-story/**', '.github/workflows/paper-story.yml']
+  pull_request:
+    paths: ['paper-story/**', '.github/workflows/paper-story.yml']
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r paper-story/requirements.txt
+      - run: python -m compileall -q paper-story
+      - run: python paper-story/scripts/build_transformer_example.py --preview-only --output paper-story/outputs/ci-preview --host "GitHub Actions CPU"
+        env:
+          CUDA_VISIBLE_DEVICES: ''
+          OMP_NUM_THREADS: '2'
+          MKL_NUM_THREADS: '2'
