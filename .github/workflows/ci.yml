@@ -2,7 +2,8 @@ name: Verify
 on: [push, pull_request]
 jobs:
   test:
-    runs-on: ubuntu-latest
+    # 固定当前 Playwright 支持的系统，避免 latest 镜像升级导致安装失败。
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
